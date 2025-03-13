@@ -1,0 +1,6 @@
+### Shutdown: 
+
+```
+shutdown -h now
+```
+
