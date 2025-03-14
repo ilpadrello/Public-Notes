@@ -23,17 +23,11 @@ Now that we know how to install vue lets try to do the hello world! First of all
 
 ```
 <html>
-
   <head>
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
   </head>
-
   <body>
-
   </body>
-
 </html>
 ```
 
@@ -41,43 +35,24 @@ Then we are going to add this code:
 
 ```
 <html>
-
   <head>
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
   </head>
-
   <body>
-
-    <div id="app">
-
+      <div id="app">
       <h1>
-
         {{ title }}
-
       </h1>
-
     </div>
-
     <script>
-
       new Vue({
-
         el: "#app",
-
         data: {
-
           title: "Hello World!!!"
-
         }
-
       });
-
     </script>
-
   </body>
-
 </html>
 ```
 
@@ -95,53 +70,29 @@ In the VUE object, we have more than the "el" and the "data" properties, one oth
 
 ```
 <html>
-
   <head>
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
   </head>
-
   <body>
-
     <div id="app">
-
       <h1>
-
         {{ sayHello() }} //HERE WE CALL THE FUNCTION 
-
-      </h1>
-
+     </h1>
     </div>
-
     <script>
-
       new Vue({
-
         el: "#app",
-
         data: {
-
-          title: "Hello World!!!"
-
+         title: "Hello World!!!"
         },
-
         methods: { //HERE WE ADD ALL THE METHODS WE NEED!
-
           sayHello: function() {
-
             return "Howdy Partner!";
-
           }
-
         }
-
       });
-
     </script>
-
   </body>
-
 </html>
 ```
 
@@ -149,13 +100,9 @@ As you can see we call directly in our template HTML the code (using parenthesis
 
 ```
 methods: {
-
           sayHello: function() {
-
             return this.title + "Im ready to learn!";
-
           }
-
         }
 ```
 
@@ -169,9 +116,7 @@ What happens if we want to put our data into an attribute in our template? Let's
 //In our Vue Instance
 
 data: {
-
           link: "http://www.simonepanebianco.fr"
-
 }
 
 
@@ -187,9 +132,7 @@ unfortunately, this method doesn't work, we can not put " {{ }} " wherever we wa
 //In our Vue Instance
 
 data: {
-
           link: "http://www.simonepanebianco.fr"
-
 }
 
 
@@ -211,45 +154,25 @@ What will happens if we have this code?
 
 ```
     <div id="app">
-
       <h1>
-
         {{ title }}
-
       </h1>
-
       {{ sayHello() }}
-
     </div>
-
     <script>
-
       new Vue({
-
         el: "#app",
-
         data: {
-
           title: "Hello World!!!",
-
           link: "http://www.simonepanebianco.fr"
-
         },
-
         methods: {
-
           sayHello: function() {
-
             this.title = "Howdy Partner! ";
-
             return this.title + "Im ready to learn!";
-
-          }
-
+         }
         }
-
       });
-
     </script>
 ```
 
@@ -257,11 +180,8 @@ It should render the "title" before and then when calling the method "sayhello()
 
 ```
 <h1 v-once> //HERE
-
    {{ title }}
-
 </h1>
-
    {{ sayHello() }}
 ```
 
@@ -273,11 +193,8 @@ Do you want to pass HTML to into data? a little bit like this?
 
 ```
 data: {
-
           title: "Hello World!!!",
-
           link: '<a href="http://www.simonepanebianco.fr"></a>'
-
         },
 ```
 
@@ -293,9 +210,7 @@ Now we want to increase a number by pushing a button... Easy javascript task... 
 
 ```
 data: {         
-
           counter: 0
-
 },
 ```
 
@@ -303,11 +218,8 @@ then we need to create the method that we are going to use for increasing the co
 
 ```
 methods: {
-
           increase: function() {
-
             ++this.counter;
-
 },
 ```
 
@@ -331,37 +243,20 @@ Every time we an event raise, javascript create an object that contains informat
 
 ```
 //HTML
-
  <div v-on:mouseMove="getCoordinates">{{ x }} / {{ y }}</div>
-
-
-
 //VUE.JS
-
 new Vue({
-
         el: "#app",
-
         data: {
-
           x: 0,
-
           y: 0
-
         },
-
         methods: {
-
           getCoordinates: function(event) {
-
             this.x = event.clientX;
-
             this.y = event.clientY;
-
           }
-
         }
-
 });
 ```
 
@@ -379,8 +274,6 @@ This will override the event object! So you will not be able to use those parame
 
 ```
 <div v-on:mouseMove="function(argument, $event)"></div>
-
-
 ```
 
 ## EVENT MODIFIERS
@@ -411,7 +304,6 @@ those can be chained also! More on the subject : [https://vuejs.org/v2/guide/ev
 
 ```
 // enable `v-on:keyup.f1`
-
 Vue.config.keyCodes.f1 = 112
 ```
 
@@ -421,41 +313,23 @@ Since now we have used Javascript code only inside  the vue instance, BUT, we c
 
 ```
 <div id="app">
-
       // The javascript code is inside the v-on directives
-
       <button v-on:click="counter++">ADD</button 
-
       ><button v-on:click="counter--">REMOVE</button>
-
       {{ counter }}
-
      //Javascript directly inside the {{}}
-
       {{
-
  counter < 10 ? "Counter Less than10" : "Content equal or more than 10" 
-
       }}
-
     </div>
-
     <script>
-
       new Vue({
-
         el: "#app",
-
         data: {
-
           counter: 0
-
         },
-
         methods: {}
-
       });
-
     </script>
 ```
 
@@ -469,39 +343,22 @@ We have seen how to update data using the "v-bind" or "v-on" directive, but what
 
 ```
     <div id="app">
-
       <input type="text" v-model="counter" />
-
       <button v-on:click="counter++">ADD</button
-
       ><button v-on:click="counter--">REMOVE</button>
-
       {{ counter }}
-
       {{
-
         counter < 10 ? "Counter Less than10" : "Content equal or more than 10"
-
       }}
-
     </div>
-
     <script>
-
       new Vue({
-
         el: "#app",
-
         data: {
-
           counter: 0
-
         },
-
         methods: {}
-
       });
-
     </script>
 ```
 
@@ -513,25 +370,15 @@ until now we have seen data, el, and methods inside our Vue.js instance but we a
 
 ```
 //HTML
-
 {{ check }}
 
-
-
 //VUE
-
  computed: {
-
  check: function() {
-
  return this.counter < 10
-
  ? "Counter Less than10"
-
  : "Content equal or more than 10";
-
  }
-
  }
 ```
 
@@ -543,19 +390,12 @@ Even if using the computed object is a better way when dealing with updates, som
 
 ```
 watch: {
-
           counter: function(value) {
-
             vm = this;
-
             setTimeout(function() {
-
               vm.counter = 0;
-
             }, 2000);
-
           }
-
         },
 ```
 
@@ -569,15 +409,9 @@ To make the code more readable VUE.js give us some shortcut, let see:
 //v-on: become @
 
 <button v-on:click="increase">ADD</button>
-
 <button @click="increase">ADD</button>
-
-
-
 //v-bind: => :
-
 <a v-bind:href=""></a>
-
 <a :href=""></a>
 ```
 
@@ -615,45 +449,26 @@ The directive "v-if" is very useful; if a certain condition is true or false the
 
 ```
 //HTML
-
 <div v-if="condition">CIAO MAMMA</div>
-
-
-
 //VUE
-
 data: {
-
           counter: 0,
-
           condition: false
-
  },
 ```
 
 ```
 //HTML
-
 <div v-if="condition">CIAO MAMMA</div>
 
-
-
 //VUE
-
 data: {
-
           test: false
-
         },
-
         computed: {
-
           condition: function() {
-
             return !this.test;
-
           }
-
         },
 ```
 
@@ -661,37 +476,26 @@ The two way are possible! "v-else" on the other way refer to the last "v-if" dir
 
 ```
 <div v-if="Math.random() > 0.5"> Now you see me </div> 
-
 <div v-else> Now you don't </div>
-
-
 ```
 
 The `v-else-if`, as the name suggests, serves as an “else if block” for `v-if`. It can also be chained multiple times:
 
 ```
 <div v-if="type === 'A'">
-
   A
-
 </div>
 
 <div v-else-if="type === 'B'">
-
   B
-
 </div>
 
 <div v-else-if="type === 'C'">
-
   C
-
 </div>
 
 <div v-else>
-
   Not A/B/C
-
 </div>
 ```
 
@@ -707,39 +511,24 @@ Now, you have a list of (everything) that you have to show, that comes from a da
 
 ```
 <div id="app-4">
-
   <ol>
-
     <li v-for="todo in todos">
-
       {{ todo.text }}
-
     </li>
-
   </ol>
-
 </div>
 ```
 
 ```
 var app4 = new Vue({
-
   el: '#app-4',
-
   data: {
-
     todos: [
-
       { text: 'Learn JavaScript' },
-
       { text: 'Learn Vue' },
-
       { text: 'Build something awesome' }
-
     ]
-
   }
-
 })
 ```
 
@@ -751,39 +540,23 @@ So, now that we can easily cycle through a list, we may want to use in our code 
 
 ```
 <div id="app-4">
-
   <ol>
-
     <li v-for="(todo,index) in todos">
-
       {{ todo.text }}{{index}}
-
     </li>
-
   </ol>
-
 </div>
 ```
-
 ```
 var app4 = new Vue({
-
   el: '#app-4',
-
   data: {
-
     todos: [
-
       { text: 'Learn JavaScript' },
-
       { text: 'Learn Vue' },
-
       { text: 'Build something awesome' }
-
     ]
-
   }
-
 })
 ```
 
@@ -795,39 +568,23 @@ The best way to use "v-for" is inside a "<template>" tag, why? a template will n
 
 ```
 <div id="app-4">
-
- 
-
   <template v-for="(todo,index) in todos">
-
       <h2>{{ todo.text }}</h2>
-
       <h4>{{index}}</h4>
-
   </template>
-
 </div>
 ```
 
 ```
 var app4 = new Vue({
-
   el: '#app-4',
-
   data: {
-
     todos: [
-
       { text: 'Learn JavaScript' },
-
       { text: 'Learn Vue' },
-
       { text: 'Build something awesome' }
-
     ]
-
   }
-
 })
 ```
 
@@ -837,12 +594,8 @@ Now, what if you want to cycle through a literal object? You can already do that
 
 ```
 <div id="app-4">
-
   <template v-for="(value,key,index) in obj">
-
       {{key}} : {{value}} [{{index}}] //This will show as key:value [0]
-
   </template>
-
 </div>
 ```
