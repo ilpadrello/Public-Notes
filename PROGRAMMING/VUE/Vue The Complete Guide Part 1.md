@@ -204,6 +204,8 @@ So you need just to write "{{link}}" and HTML will be rendered? Nope! VUE consid
 <div v-html="link"></div>
 ```
 
+## EDIT: NOT FAN
+I'm not fan of this approach, it could potentially open the door to some cross site scripting....
 ## EVENTS
 
 Now we want to increase a number by pushing a button... Easy javascript task... First of all, we need our counter variable in our data:

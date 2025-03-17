@@ -67,7 +67,7 @@ methods:{
 }
 ```
 
-Since you call the method `setName` using without `()` the event object is passed by default (the event object is a native js object).  
+Since you call the method `setName` without arguments (not even `()`) the event object is passed by default (the event object is a native js object).  
 But what if you want to pass another parameter to this method? Usually, you should do something like this : `v-on:input="setName('param')"`, but the event parameter is lost this way!
 
 The solution is using a special variable that Vue.js let you use to pass the event : `$event` :

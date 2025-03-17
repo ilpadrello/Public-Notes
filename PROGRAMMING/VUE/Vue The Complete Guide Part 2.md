@@ -74,7 +74,7 @@ this.$ref.mybutton.innerText
 app.$ref.mybutton.innerText
 ```
 
-Unfortunately, there is a catch using this method, if we change something w change directly the DOM, we do not change the template system that vue.js create for us this means that the when we re-rend the page when something happens the code that we have changed will return as it is in the template (that is a kind of middle layer between how our page is created and how is rendered)
+Unfortunately, there is a catch using this method, if we change something w change directly the DOM, we do not change the template system that vue.js create for us this means that when we re-rend the page when something happens the code that we have changed will return as it is in the template (that is a kind of middle layer between how our page is created and how is rendered)
 
 Others available property of the Vue.js API you can go to: [https://vuejs.org/v2/api/](https://vuejs.org/v2/api/)
 
@@ -101,7 +101,7 @@ document.getElementById('app3').appendChild(vm3.$el);
 
 ## Components
 
-What if we want to reuse some part of the code reusable? In this case we use components!  
+What if we want to reuse some part of the code? In this case we use components!  
 If you try to mount one instance of vue.js to multiple HTML (using something like a class for example), you will see that only the first object will be affected, this is because you can only attach one element to an instance of vue.js
 
 In order to reuse the code in multiples places, you use the components:
