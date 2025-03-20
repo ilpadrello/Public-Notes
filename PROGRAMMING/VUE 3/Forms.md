@@ -70,38 +70,24 @@ If you use the same name, they create a group, and that group is transformed int
 ```
 //Thoose are binded with a single data variable called interests
 <div>
-
    <input v-model="interests" name="interests" id="interest-news" type="checkbox" value="news" /> //Value needed
-
    <label for="interest-news">News</label>
-
 </div>
 
 <div>
-
    <input v-model="interests" name="interests" id="interest-tutorials" type="checkbox" value="tutorials"/> //Value needed
-
    <label for="interest-tutorials">Tutorials</label>
-
 </div>
 
 <div>
-
    <input v-model="interests" name="interests" id="interest-nothing" type="checkbox" value="nothing"/> //Value needed
-
    <label for="interest-nothing">Nothing</label>
-
 </div>
-
 
 //Data:
 data(){
-
     return {
-
-
       interests:[]
-
     }
 ```
 
@@ -132,69 +118,41 @@ Let's start with the first part: build your component! A three-button rating sho
 ```
 //RatingController.vue
 <template>
-
     <div>
-
         <button v-for="rating in ratings" v-bind:key="rating" :class="{active: choosenRating===rating}" type="button" @click="changeRating(rating)">{{rating}}</button>
-
     </div>
-
 </template>
 
 
 
 <style scoped>
-
 button{
-
     padding: 0.5rem;
-
     border:2px solid;
-
     border-color: transparent;
-
     }
-
 .active{
-
     border-color:green;
-
 }
-
 </style>
 
 
 
 <script>
-
 export default {
-
     data(){
-
         return{
-
             ratings:['Very Poor','Poor','Normal','Great','Super Great],
-
             choosenRating:null,
-
         }
-
     },
-
     methods:{
-
         changeRating(rating){
-
             console.log(rating);
-
             this.choosenRating = rating;
-
         }
-
     }
-
 }
-
 </script>
 ```
 
@@ -202,27 +160,20 @@ export default {
 //Parent.vue
 //...
 <div>
-
   <rating-control></rating-control>
-
 </div>
 //...
 import RatingControl from './RatingController.vue'
 
-
 //...
   components:{
-
     RatingControl
-
   },
-
 ```
 
 Using this technique, we will have as many rating buttons as we want just by adding and removing them from the array!
 
 Now we have a component, that has logic and a layout! But how do we access the value that the users selected from the parent? Yes, I know you can emit an event, but there is a better way, we can use the v-model from the parent and reflect that in our child.
-
 ## PROPS: modelValue EMIT update:modelValue
 
 By default, when using v-model to a component, Vue set a very specific prop in the component, and it will listen to a very specif event, that you can emit in that component. The props is `modelValue` and the event is `update:modelValue`. So doing this:
@@ -238,7 +189,6 @@ Is the same as doing this:
 ```
 
 The first way is much cooler! Ok, but since we have a prop and an event to listen to, we need to modify our custom component :
-
 ```
 //RatingController.vue
 export default {
@@ -267,13 +217,9 @@ And of course we need to add the rating data in our parent :
 <rating-control v-model="rating"></rating-control>
 //...
 data(){
-
   return {
-
     rating:null
-
   }
-
 },
 ```
 
@@ -301,47 +247,26 @@ Of course, if for some specific reason, you can not afford to link them directly
 
 ```
 export default {
-
     data(){
-
         return{
-
             ratings:['Very Poor','Poor','Normal','Great'],
-
         }
-
     },
-
     computed:{
-
       choosenRating(){
-
           console.log("computed called");
-
           return this.modelValue;
-
       }  
-
     },
-
     props:['modelValue'],
-
     emits:['update:modelValue'],
-
     methods:{
-
         changeRating(rating){
-
             console.log(rating);
-
             this.choosenRating = rating;
-
             this.$emit('update:modelValue',rating);
-
         }
-
     }
-
 }
 ```
 

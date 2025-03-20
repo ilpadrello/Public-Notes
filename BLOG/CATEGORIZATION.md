@@ -70,7 +70,16 @@ With that said, here's some categorization p\*rn for you my OCD friend:
     
     CopyEdit
     
-    `/Projects   ├── Web   │   ├── Frontend   │   ├── Backend   ├── Mobile   │   ├── Android   │   ├── iOS`
+    `/Projects   
+    ├── Web   
+	 │   
+     ├── Frontend   
+     │   
+	 ├── Backend   
+    ├── Mobile   
+     │   
+     ├── Android   │   
+     ├── iOS`
     
 - **Example (Database Schemas):**
     - `finance.invoices`

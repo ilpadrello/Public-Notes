@@ -3,9 +3,9 @@ title: "VUE ROUTING"
 date: "2022-08-24"
 ---
 
-First of all, just remember that you don't have to build SPA (Single Page Applications), you can have multiple HTML files if it fits better in your project. That sais
+First of all, just remember that you don't have to build SPA (Single Page Applications), you can have multiple HTML files if it fits better in your project, with that said:
 
-Vue routing lets you convert what is in your URL into specific pages of your application.
+Vue.js routing lets you convert what is in your URL into specific pages of your application.
 
 ## INSTALLING VUE ROUTING
 
@@ -37,7 +37,6 @@ Not let's configure our router:
 
 ```
 const router = createRouter({
-
   routes: [],
 });
 ```

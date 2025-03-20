@@ -493,7 +493,7 @@ There are two advanced concepts you also should have heard about:
 
 ## Prop Fallthrough
 
-You can set props (and listen to events) on a component which you haven't registered inside of that component.
+A "fallthrough attribute" is an attribute or `v-on` event listener that is passed to a component, but is not explicitly declared in the receiving component's [props](https://vuejs.org/guide/components/props) or [emits](https://vuejs.org/guide/components/events#declaring-emitted-events). Common examples of this include `class`, `style`, and `id` attributes.
 
 For example:
 
@@ -501,32 +501,36 @@ For example:
 
 ```
 <template>
-    <button>
-    <slot></slot>
-  </button>
+    <button>Click Me</button>
 </template>
  <script>
 export default {}
 </script>
 ```
 
-This button component (which might exist to set up a button with some default styling) **has** **no special props** that would be registered.
+This button component (which might exist to set up a button with some default styling) **has** **no special props** that would be registered, also it has only one root element (the `<button>` element).
 
 Yet, you can use it like this:
 
 ```
-<base-button type="submit" @click="doSomething">Click me</base-button>
+<base-button class="large">Click me</base-button>
 ```
 
-Neither the `type` prop nor a custom `click` event are defined or used in the `BaseButton` component.
+The final rendered DOM would be:
+
+html
+
+```
+<button class="large">Click Me</button>
+```
 
 **Yet, this code would work.**
 
-Because Vue has built-in support for **prop (and event) "fallthrough"**.
-
+Because `vue` has built-in support for (**prop, event, classes et others) "fall through"**.
+ 
 Props and events added on a custom component tag **automatically fall through** to the **root component** in the template of that component. In the above example, `type` and `@click` get added to the `<button>` in the `BaseButton` component.
 
-You can get access to these fallthrough props on a built-in `$attrs` property (e.g. `this.$attrs`).
+You can get access to these fall through props on a built-in `$attrs` property (e.g. `this.$attrs`).
 
 This can be handy to build "utility" or pure presentational components where you don't want to define all props and events individually.
 
@@ -534,7 +538,24 @@ This can be handy to build "utility" or pure presentational components where you
 
 You can learn more about this behavior here: [https://v3.vuejs.org/guide/component-attrs.html](https://v3.vuejs.org/guide/component-attrs.html)
 
-#### Binding all Props
+### Attention : This work only if the component has only a single root child
+
+The pass-through would not work un less you specify where the attributes must go : 
+
+```
+// Vue doesn't know where to attach all the attributes
+<header>...</header>
+<main>...</main>
+<footer>...</footer>
+```
+
+```
+// Now it does
+<header>...</header>
+<main v-bind="$attrs">...</main>
+<footer>...</footer>
+```
+### Binding all Props
 
 There is another built-in feature/ behavior related to props.
 
@@ -599,7 +620,7 @@ This works only in a Ancestor -> Child relationship, not in brotherhood, so pay 
 
 Using provide, you can provide the function that will be executed when the event is called.
 
-Also, remember that if you need reactivity for the data you provide, you should use one of this two :
+Also, remember that if you need reactivity for the data you provide, you should use one of this two:
 
 // This goes to the parent, like the data().
 // Also using this syntax, you make sure you can use data that are on your component.
@@ -672,7 +693,7 @@ When registering the components this way, you impose the use of that component i
 
 To understand what slots are, it is better to understand what problem they solve.
 
-Let's imagine that you have a section on a tag inside your code, that section tag should have a specific look, (like a card, or a specific shape or whatever), but its content may vary, you could put different things inside each section, a calendar, a form, a button it doesn't matter, what matter is that all sections should have all the same aspect.
+Let's imagine that you have a `<section>` tag inside your code, that section tag should have a specific look, (like a card, or a specific shape or whatever), but its content may vary, you could put different things inside each section, a calendar, a form, a button it doesn't matter, what matter is that all sections should have all the same aspect.
 
 You may think that you will just add the needed CSS in the `App.vue` style part, so that the CSS would be global for all the project, but that would not be good, you may also break other things. Instead what you could do, is use a slot.
 

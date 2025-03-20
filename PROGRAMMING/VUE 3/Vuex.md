@@ -89,7 +89,7 @@ Right now we have the method and the display of the counter on the same componen
 
 ## MUTATIONS - A Better way of changing data
 
-Updating the store inside a component to see the reacting differences in other components is cool. But is this really the best way of doing so?  
+Updating the store from inside a component to see the reacting differences in other components is cool. But is this really the best way of doing so?  
 If you want to add one to your counter, and you want to take this action in a different part of your app, you will have to rewrite the `addOne` function in each component you want to fire it! And that is not good. Also, it is more prone to error, because if you want to change the logic of an action (`addOne` also log something now) you will have to change the code inside all the components you have made. Not good at all.
 
 In Vuex we have this concept: mutations! A mutation is like `methods` in a normal Vue object. Those are functions that you use to mutate the state, and you can call them from wherever in your app. So you don't have to modify all the code from everywhere when you want to change something.  
@@ -285,14 +285,14 @@ actions: {
     addOne(context, payload) {
       console.log('Add One action called');
       setTimeout(() => {
-  addOne(context, payload) {
-      setTimeout(() => {
-        context.dispatch('logTheThing', payload);
-        context.commit('addOne', payload);
-      }, 1000);
-    },
-    logTheThing(_, payload) {
-      console.log('logTheThing called with a payload', payload);
+		addOne(context, payload) {
+		    setTimeout(() => {
+				context.dispatch('logTheThing', payload);
+			    context.commit('addOne', payload);
+		    }, 1000);
+		},
+	    logTheThing(_, payload) {
+	    console.log('logTheThing called with a payload', payload);
     },
 
 ```
@@ -318,7 +318,6 @@ computed:{
     firstGetter(){
       return this.$store.getters.firstValue;
     },
-
     secondGetter(){
        return this.$store.getters.secondValue;
     },
@@ -373,7 +372,7 @@ methods:{
 
 Let's talk real, if you can have a single store in your app, and your app in pretty big, will you get all your store in a single file? in an enormous, super long file? I don't think this is a good idea.
 
-Vuex help you organize your store in a very clever way, you dont just have a file for all your mutation and one for all actions, no no, you can organize them by logic! You can create an object that as store, mutations, actions and getters that are all about one feature (auth for example) and plug it in the main store!
+Vuex help you organize your store in a very clever way, you don't just have a file for all your mutation and one for all actions, no no, you can organize them by logic! You can create an object that as store, mutations, actions and getters that are all about one feature (AUTH for example) and plug it in the main store!
 
 Here is an example :
 
