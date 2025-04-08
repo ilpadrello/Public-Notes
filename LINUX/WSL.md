@@ -1,0 +1,3 @@
+rebooting wls
+
+wls --shutdown

@@ -1,0 +1,23 @@
+# New VPS basic
+
+- Update the system : `sydo apt udpate -y && sudo apt upgrade -y`
+- Create a new user with `sudo` privileges (no root user for everyday task)
+- Disable Root Login via ssh
+- Change the default SSH Port (something between 49152 and 65535)
+- Use SSH keys for Authentication and no password
+- Set a strong password for the new User
+- Configure a Firewall
+- Install Fail2ban
+- Enable Security updates
+- Installa intrusion Detection System (IDS) / Intrusion Prevention System
+- Configure Log Rotation
+- Disable Unnecessary Services
+- Harden SSH Further
+- Implement SELinux or AppArmor
+- Scan for Rootkits and Malware
+- Regular Security Audits
+- Use a VPN
+- Keep Web server software updated
+- Configure HTTPS (SSL/TLS)
+- Secure web server Config
+- Web Application Firewall
