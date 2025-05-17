@@ -1,0 +1,3 @@
+A lesson from airtable...
+
+When I was working in a school as developer 
