@@ -1,4 +1,5 @@
 So that BOT would not easy life knowing the port.
+(More info about why down)
 
 ### Debian
 ```
@@ -28,7 +29,11 @@ sudo systemctl restart sshd
 ```
 
 ### Ubuntu 23.04
-When working with Ubuntu 23.04 Restarting `sshd` is a little tricky, look online
+When working with Ubuntu 23.04 Restarting `sshd` is a little tricky, look online 
 
 
-
+### WHY ?
+Changing the port **is worth it** because:
+- It massively reduces log spam & brute-force attempts especially for bots.
+- It costs you nothing.
+But you should **not rely on it alone**. It’s a _noise filter_, not a _lock_

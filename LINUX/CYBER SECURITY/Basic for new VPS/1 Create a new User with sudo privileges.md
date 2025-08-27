@@ -14,3 +14,5 @@ Let's create a new user :
 sudo adduser yourusername
 sudo usermod -aG sudo yourusername
 ```
+
+Change user using the `su` command and try `sudo whoami` : you should be root

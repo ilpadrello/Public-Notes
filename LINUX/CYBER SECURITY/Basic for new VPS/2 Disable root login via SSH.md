@@ -8,6 +8,7 @@ It's good practice to keep one SSH session open while you make these changes, ju
 Log in as the sudoer user, open the SSH config file with `sudo` privileges : 
 
 ```
+# Attention to the d after sshd... ssh_config exists but is not the correct one
 sudo nano /etc/ssh/sshd_config
 ```
 
