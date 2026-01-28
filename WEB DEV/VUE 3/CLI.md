@@ -58,7 +58,7 @@ Next, you can `cd name-of-your-app` && `npm run serve`
 
 Let's analyze what's inside the created folder :
 
-![](images/image-1.png)
+![](image-1.png)
 
 So, on the root level we have a bunch of configuration files : unless you know what are you doing, you can leave the defaults there.
 

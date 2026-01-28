@@ -76,7 +76,7 @@ This kind of positioning, just simply does not affect the position of an element
 
 ```
 
-![](images/image.png)
+![](image.png)
 
 As you can see, the DIVS follow the normal flow of the page. The parent contains the three children, that are showed one after the others.
 
@@ -112,7 +112,7 @@ Well, no! So let's try to understand better what is going on... Let's change all
 }
 ```
 
-![](images/image-1.png)
+![](image-1.png)
 
 Absolutely nothing has changed... Wait, what? How ? Why ?  
 Well first of all, the difference with static is that you can change TOP LEFT RIGHT and BOTTOM properties (while setting them on a static position will not have any effect on the target). So let's try this :
@@ -138,7 +138,7 @@ Well first of all, the difference with static is that you can change TOP LEFT RI
 }
 ```
 
-![](images/image-2.png)
+![](public/WEB%20DEV/CSS/images/image-2.png)
 
 As you can see the parent is 40 pixels away `relative` to the top of the page  
 The first child is 20px away `relative` to the left of his original position (not page border, because before that there is the padding of this father)  

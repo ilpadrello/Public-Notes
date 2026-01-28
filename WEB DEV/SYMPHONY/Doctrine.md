@@ -613,15 +613,15 @@ For each course, we are going to have just a label for the name of the course (s
 
 Since this will be a "relation" field, the kind of the property (string, integer) will be "relation".
 
-![](images/image.png)
+![](image.png)
 
 When using the relation type a wizard will be called to help us create the relation, the first thing it will ask us is the entity we need to relate to, so in this case student
 
-![](images/image-1.png)
+![](image-1.png)
 
 Then it will ask us the kind of relation we want: "OneToMany" , "ManyToMany", etc.
 
-![](images/image-2.png)
+![](public/WEB%20DEV/CSS/images/image-2.png)
 
 In our case is "OneToMany" because each Course can have many Student, but each Student relates to one Course
 

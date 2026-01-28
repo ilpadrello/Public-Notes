@@ -130,7 +130,7 @@ Before starting to talk about the folder structure of Symfony we need to know th
 
 Let's talk about the folder structure that we just created:
 
-![](images/image-1.png)
+![](image-1.png)
 
 #### ./src (source)
 

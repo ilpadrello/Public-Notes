@@ -59,7 +59,7 @@ li {
 
 And this is what you will see:
 
-![](images/image.png)
+![](image.png)
 
 Did you notice that all the `<li>` element are displayed as inline elements? It is like we have used float.
 

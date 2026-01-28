@@ -37,7 +37,7 @@ The first thing to do is to define a container that will have a display of `grid
 </div>
 ```
 
-![](images/image.png)
+![](image.png)
 
 For now, the two divs are just one above the other, as they would normally do. And they take 100% width.  
 This is not yet a grid because we don't know yet how many columns or rows are there, so we need to specify that:
@@ -49,6 +49,6 @@ This is not yet a grid because we don't know yet how many columns or rows are th
 }
 ```
 
-![](images/image-1.png)
+![](image-1.png)
 
 What is happening here is that we said to CSS that we want our grid to be: the first "cell" to be 2 fractions

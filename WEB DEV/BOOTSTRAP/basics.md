@@ -89,18 +89,18 @@ What if you want to have two columns that take both half of the size of the cont
 </div>
 ```
 
-![](images/image.png)
+![](image.png)
 
 As you can see we have `.col-6` and `.col-6` columns, that is because at the end we have to allocate 12 columns.  
 So you can do something likle `.col-3` and `.col-9`
 
-![](images/image-1.png)
+![](image-1.png)
 
 So we have 3/12 (1/4) occupied with the first column and then 9/12 (3/4) columns occupied with the second column
 
 What if you don't use all the 12 spaces you dispose of?
 
-![](images/image-2.png)
+![](public/WEB%20DEV/CSS/images/image-2.png)
 
 If you remove the second column, only 1/4 of the space will be used and the rest will be empty! The spaces that you don't use will be empty.
 

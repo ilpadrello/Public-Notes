@@ -301,7 +301,7 @@ actions: {
 
 What can we access from the context? Let's try `console.log` it:
 
-![](images/image.png)
+![](image.png)
 
 Well, we can access mutations via commit, we can call actions via dispatch, we can have getters if we want, or access the state directly (not a good idea to modify it directly tho)
 
@@ -486,7 +486,7 @@ Same for `dispatch`, `mapActions` etc.
 
 Ok, what is the best way to organize the store? How to subdivide files?
 
-![](images/image-1.png)
+![](image-1.png)
 
 One common way to do it is to have a store folder, `index.js` represent the root store, while you can import the rest (actions, getters and mutations) from the other files:
 

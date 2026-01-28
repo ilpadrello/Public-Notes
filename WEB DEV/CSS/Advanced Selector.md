@@ -45,7 +45,7 @@ Select the items that got this property: "Right before me (at the same level) is
 }
 ```
 
-![](images/image-1.png)
+![](image-1.png)
 
 The first one div of class box don't have another element with class .box before him, and nether the third box. And that is why they are gray.
 
@@ -68,7 +68,7 @@ General sibling is like the Adjacent Sibling With the difference that the siblin
 }
 ```
 
-![](images/image-2.png)
+![](public/WEB%20DEV/CSS/images/image-2.png)
 
 As you can see, the first one does not have a sibling before that have the class box, but the third one does, even if is not right before.
 
