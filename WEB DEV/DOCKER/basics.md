@@ -1,9 +1,10 @@
 ---
-title: "Docker"
-date: "2020-01-31"
-tags: 
-  - "compose"
-  - "docker"
+title: Docker
+date: 2020-01-31
+tags:
+  - compose
+  - docker
+aliases:
 ---
 
 What is Docker? What problems it solves, and why you should learn it right now!  

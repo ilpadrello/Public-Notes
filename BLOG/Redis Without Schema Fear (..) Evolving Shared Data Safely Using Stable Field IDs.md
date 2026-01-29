@@ -27,9 +27,8 @@ This works… until it doesn’t.
 - Multiple services read the same Redis data
 - One service changes the structure:
     - renames a field
-        
+
     - moves it into a nested object
-        
 - Other services break
     
 - Fix requires:
