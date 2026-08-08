@@ -68,7 +68,7 @@ General sibling is like the Adjacent Sibling With the difference that the siblin
 }
 ```
 
-![](public/WEB%20DEV/CSS/images/image-2.png)
+![](public/COMPUTER%20SCIENCE/DEV/TECHNOLOGIES/CSS/images/image-2.png)
 
 As you can see, the first one does not have a sibling before that have the class box, but the third one does, even if is not right before.
 

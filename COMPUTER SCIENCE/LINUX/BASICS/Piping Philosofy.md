@@ -15,7 +15,7 @@ Pipe is used to combine two or more command and in this the output of one comman
 $ ls -l | more
 ```
 
-**Output :**  [![](images/pipe-1.png)](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/pipe-1.png) The more command takes output of $ ls -l as its input. The net effect of this command is that the output of ls -l is displayed one screen at a time. The pipe act as a container which take output of ls -l and giving it to more as input. This command does not use a disk to connect standard output of ls -l to standard input of more because pipe is implemented in the main memory. In terms of I/O redirection operators, the above command is equivalent to the following command sequence.
+**Output :**  [![](pipe-1.png)](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/pipe-1.png) The more command takes output of $ ls -l as its input. The net effect of this command is that the output of ls -l is displayed one screen at a time. The pipe act as a container which take output of ls -l and giving it to more as input. This command does not use a disk to connect standard output of ls -l to standard input of more because pipe is implemented in the main memory. In terms of I/O redirection operators, the above command is equivalent to the following command sequence.
 
 ```
 $ ls -l -> temp
@@ -29,4 +29,4 @@ rm temp
 
 ```
 
-**Output :**  [![](images/pipe-1b.png)](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/pipe-1b.png) Output of above two commands are same.
+**Output :**  [![](pipe-1b.png)](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/pipe-1b.png) Output of above two commands are same.

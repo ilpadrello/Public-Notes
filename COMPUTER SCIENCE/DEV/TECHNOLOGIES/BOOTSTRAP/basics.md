@@ -100,7 +100,7 @@ So we have 3/12 (1/4) occupied with the first column and then 9/12 (3/4) columns
 
 What if you don't use all the 12 spaces you dispose of?
 
-![](public/WEB%20DEV/CSS/images/image-2.png)
+![](public/COMPUTER%20SCIENCE/DEV/TECHNOLOGIES/CSS/images/image-2.png)
 
 If you remove the second column, only 1/4 of the space will be used and the rest will be empty! The spaces that you don't use will be empty.
 

@@ -138,7 +138,7 @@ Well first of all, the difference with static is that you can change TOP LEFT RI
 }
 ```
 
-![](public/WEB%20DEV/CSS/images/image-2.png)
+![](public/COMPUTER%20SCIENCE/DEV/TECHNOLOGIES/CSS/images/image-2.png)
 
 As you can see the parent is 40 pixels away `relative` to the top of the page  
 The first child is 20px away `relative` to the left of his original position (not page border, because before that there is the padding of this father)  

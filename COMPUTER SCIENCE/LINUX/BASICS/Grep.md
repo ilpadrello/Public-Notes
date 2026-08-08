@@ -109,7 +109,7 @@ Use the -l option to list file name whose contents mention main(): `$ grep -l 'm
 
 <figure>
 
-[![Grep command in action on Linux and Unix like system](images/grep_command_examples.png "Grep --color command Examples")](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/grep_command_examples/)
+[![Grep command in action on Linux and Unix like system](grep_command_examples.png "Grep --color command Examples")](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/grep_command_examples/)
 
 <figcaption>
 
